@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Lab ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        background: url('myphoto.jpg') center/cover no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    /* ENVELOPE VIEW */
+    .envelope-view {
+        text-align: center;
+    }
+
+    .envelope {
+        width: 360px;
+        height: 240px;
+        background: #f6c1cc;
+        border-radius: 10px;
+        position: relative;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        margin-bottom: 20px;
+    }
+
+    .flap {
+        width: 0;
+        height: 0;
+        border-left: 180px solid transparent;
+        border-right: 180px solid transparent;
+        border-bottom: 120px solid #f1aeb8;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .front-text {
+        position: absolute;
+        bottom: 30px;
+        width: 100%;
+        font-size: 18px;
+        font-weight: bold;
+        color: #b0003a;
+    }
+
+    button {
+        padding: 10px 22px;
+        border: none;
+        background: #e91e63;
+        color: white;
+        font-size: 16px;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #c2185b;
+    }
+
+    /* MESSAGE VIEW */
+    .message-view {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.6);
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.95);
+        max-width: 520px;
+        width: 100%;
+        max-height: 90vh;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        overflow-y: auto;
+        text-align: center;
+    }
+
+    h1 {
+        color: #e91e63;
+        margin-bottom: 5px;
+    }
+
+    .name {
+        color: #e91e63;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-family: Georgia, serif;
+        font-size: 18px;
+        line-height: 1.8;
+        color: #333;
+    }
+
+    .footer {
+        margin-top: 20px;
+        font-style: italic;
+    }
+
+    .hint {
+        font-size: 12px;
+        color: #555;
+        margin-top: 10px;
+    }
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+    <source src="You'reStillTheOneInstrumental.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ENVELOPE -->
+<div class="envelope-view" id="envelopeView">
+    <div class="envelope">
+        <div class="flap"></div>
+        <div class="front-text">💌 A Special Message 💌</div>
+    </div>
+    <button onclick="openCard()">Open Envelope 💖</button>
+</div>
+
+<!-- MESSAGE -->
+<div class="message-view" id="messageView">
+    <div class="card">
+        <h1>Happy Birthday </h1>
+        <div class="name">Lab ❤️</div>
+
+        <p>
+            I'm so grateful for you and for every moment we share.
+            You make my days brighter, my heart fuller, and my life so much better just by being you.
+            <br><br>
+            I hope this year brings you happiness, success, and everything you've been working so hard for.
+            I'll always be here, cheering you on and loving you more than words can say.
+            <br><br>
+            Enjoy your special day—you deserve it and so much more. 🎉
+        </p>
+
+        <div class="footer">Forever yours 💕</div>
+    </div>
+</div>
+
+<script>
+    function openCard() {
+        document.getElementById("envelopeView").style.display = "none";
+        document.getElementById("messageView").style.display = "flex";
+        document.getElementById("bgMusic").play();
+    }
+</script>
+
+</body>
+</html>
